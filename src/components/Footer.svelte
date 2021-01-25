@@ -1,4 +1,7 @@
 <script>
+import { onMount } from "svelte";
+import { fly } from "svelte/transition";
+
 import GoSearch from "svelte-icons/go/GoSearch.svelte";
 import IoMdSettings from "svelte-icons/io/IoMdSettings.svelte";
 import Avatar from "./Avatar.svelte";
@@ -27,92 +30,102 @@ const listMouseOver = (i) => {
 	const shift = 75;
 	marTop = i * shift;
 };
+
+let visible = false;
+
+onMount(() => (visible = true));
 </script>
 
 <footer>
-	<section>
-		<div class="messages"></div>
+	{#if visible}
+		<section transition:fly="{{ y: 500, duration: 1000 }}">
+			<div class="messages"></div>
 
-		<section>
-			<div class="search">
-				<form action="" class="search-form">
-					<input type="text" class="search-text" id="search-text" />
-					<span class="icon-wrapper">
-						<Icon size="{16}">
-							<GoSearch />
-						</Icon>
-					</span>
-					<span class="search-text-bg"></span>
-				</form>
-			</div>
-			<Spacer size="{{ width: '100%', height: '12px' }}" />
-			<div class="trends">
-				<div class="trends-wrapper">
-					<div class="trends-header">
-						<span class="trends-title">New Trends for you</span>
-						<span>
-							<Icon size="{18}">
-								<IoMdSettings />
+			<section>
+				<div class="search">
+					<form action="" class="search-form">
+						<input
+							type="text"
+							class="search-text"
+							id="search-text"
+						/>
+						<span class="icon-wrapper">
+							<Icon size="{16}">
+								<GoSearch />
 							</Icon>
 						</span>
-					</div>
-					<div class="trends-list-wrapper">
-						<p class="trends-subtitle">Trending in My Stack</p>
-						<ul class="trends-list">
-							{#each trendLists as trend, idx}
-								<TrendList
-									trend="{trend.trend}"
-									numberOfTweets="{trend.numberOfTweets}"
-									listMouseOver="{() => listMouseOver(idx)}"
-								/>
-							{/each}
-						</ul>
+						<span class="search-text-bg"></span>
+					</form>
+				</div>
+				<Spacer size="{{ width: '100%', height: '12px' }}" />
+				<div class="trends">
+					<div class="trends-wrapper">
+						<div class="trends-header">
+							<span class="trends-title">New Trends for you</span>
+							<span>
+								<Icon size="{18}">
+									<IoMdSettings />
+								</Icon>
+							</span>
+						</div>
+						<div class="trends-list-wrapper">
+							<p class="trends-subtitle">Trending in My Stack</p>
+							<ul class="trends-list">
+								{#each trendLists as trend, idx}
+									<TrendList
+										trend="{trend.trend}"
+										numberOfTweets="{trend.numberOfTweets}"
+										listMouseOver="{() => listMouseOver(idx)}"
+									/>
+								{/each}
+							</ul>
+						</div>
 					</div>
 				</div>
-			</div>
-			<Spacer size="{{ width: '100%', height: '12px' }}" />
-			<div class="to-follow">
-				<div class="trends-wrapper">
-					<div class="trends-header to-follow-header">
-						<span class="trends-title">Inspiring People</span>
-					</div>
-					<div class="trends-list-wrapper">
-						<ul class="trends-list">
-							{#each toFollow as people}
-								<li class="to-follow-lists">
-									<div class="follow-card">
-										<Avatar
-											src="/images/avatar_temp{Math.floor(Math.random() * 5 + 1)}.jpg"
-											alt="ok"
-											size="{45}"
-										/>
-										<div class="follow-data">
-											<p>{people.name}</p>
-											<p>{people.handle}</p>
+				<Spacer size="{{ width: '100%', height: '12px' }}" />
+				<div class="to-follow">
+					<div class="trends-wrapper">
+						<div class="trends-header to-follow-header">
+							<span class="trends-title">Inspiring People</span>
+						</div>
+						<div class="trends-list-wrapper">
+							<ul class="trends-list">
+								{#each toFollow as people}
+									<li class="to-follow-lists">
+										<div class="follow-card">
+											<Avatar
+												src="/images/avatar_temp{Math.floor(Math.random() * 5 + 1)}.jpg"
+												alt="ok"
+												size="{45}"
+											/>
+											<div class="follow-data">
+												<p>{people.name}</p>
+												<p>{people.handle}</p>
+											</div>
+											<div class="follow-cta-wrapper">
+												<Button>Follow</Button>
+											</div>
 										</div>
-										<div class="follow-cta-wrapper">
-											<Button>Follow</Button>
-										</div>
-									</div>
-								</li>
-							{/each}
-						</ul>
+									</li>
+								{/each}
+							</ul>
+						</div>
 					</div>
 				</div>
-			</div>
-			<Spacer size="{{ width: '100%', height: '12px' }}" />
-			<div class="footer">
-				<ul class="other-list">
-					<li>Terms of Service</li>
-					<li>Privacy Policy</li>
-					<li>Cookie Policy</li>
-					<li>Ads info</li>
-					<li>More</li>
-				</ul>
-				<p>© 2021 Twitter, Inc.</p>
-			</div>
+				<Spacer size="{{ width: '100%', height: '12px' }}" />
+				<div class="footer">
+					<ul class="other-list">
+						<li>Terms of Service</li>
+						<li>Privacy Policy</li>
+						<li>Cookie Policy</li>
+						<li>Ads info</li>
+						<li>More</li>
+					</ul>
+					<p>© 2021 Twitter, Inc.</p>
+				</div>
+			</section>
 		</section>
-	</section>
+	{/if}
 </footer>
 
 <style>

@@ -1,4 +1,7 @@
 <script>
+import { onMount } from "svelte";
+import { fade } from "svelte/transition";
+
 import Cursor from "./components/Cursor.svelte";
 import Footer from "./components/Footer.svelte";
 import Nav from "./components/Nav.svelte";
@@ -11,6 +14,9 @@ import TwitterCard2 from "./components/TwitterCard2.svelte";
 import Layout from "./Layout.svelte";
 
 let innerHeight;
+let visible = false;
+
+onMount(() => (visible = true));
 </script>
 
 <svelte:window bind:innerHeight />
@@ -27,14 +33,16 @@ let innerHeight;
 					innerShadow="{true}"
 				/>
 				<div>
-					<div>
-						<TwitterCard />
-						<TwitterCard1 />
-						<TwitterCard />
-						<TwitterCard2 />
-						<TwitterCard1 />
-						<TwitterCard1 />
-					</div>
+					{#if visible}
+						<div transition:fade="{{ duration: 1000 }}">
+							<TwitterCard />
+							<TwitterCard1 />
+							<TwitterCard />
+							<TwitterCard2 />
+							<TwitterCard1 />
+							<TwitterCard1 />
+						</div>
+					{/if}
 				</div>
 			</div>
 		</section>
