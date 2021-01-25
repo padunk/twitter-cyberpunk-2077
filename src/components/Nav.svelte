@@ -292,6 +292,11 @@ const exploreMenu = { name: "explore", component: FaHashtag };
 .follow-data {
 	flex-grow: 2;
 	cursor: pointer;
+	display: none;
+}
+
+.follow-cta-wrapper {
+	display: none;
 }
 
 @media only screen and (min-width: 1004px) {
@@ -319,6 +324,11 @@ const exploreMenu = { name: "explore", component: FaHashtag };
 
 	.cta-tweet-mobile {
 		display: none;
+	}
+
+	.follow-data,
+	.follow-cta-wrapper {
+		display: block;
 	}
 }
 </style>
