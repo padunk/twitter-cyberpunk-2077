@@ -20,8 +20,8 @@ let random = Math.floor(Math.random() * 5 + 1);
 			<div class="header">
 				<div>
 					<p>
-						<span class="handle-text-normal">V</span>
-						<span class="handle-text-dark">@v</span>
+						<span class="handle-text-normal">Judy Alvarez</span>
+						<span class="handle-text-dark">@judyalvarez2077</span>
 						<span class="handle-text-dark">&dotsquare;</span>
 						<span class="handle-text-dark">66s</span>
 					</p>
@@ -36,9 +36,8 @@ let random = Math.floor(Math.random() * 5 + 1);
 		<div class="body-wrapper">
 			<div class="body-text">
 				<p>
-					It wasn't until after college, when I went to Chicago to
-					work as a community organizer for a group of Christian
-					churches, that I confronted my own spiritual dilemma.
+					"Once upon a time, people were talking to graves and nobody
+					batted an eyelid, right?" - Judy Alvarez to V on the phone.
 				</p>
 			</div>
 		</div>

@@ -50,9 +50,10 @@ let random = Math.floor(Math.random() * 5 + 1);
 		<div class="body-wrapper">
 			<div class="body-text">
 				<p>
-					It wasn't until after college, when I went to Chicago to
-					work as a community organizer for a group of Christian
-					churches, that I confronted my own spiritual dilemma.
+					"Oo, I love this town! Love it like you might love a mother
+					who popped you out on the steps of an orphanage and now
+					stops you to ask if you got a smoke for her!" - Stanley,
+					speaking to the world live via radio.
 				</p>
 			</div>
 		</div>

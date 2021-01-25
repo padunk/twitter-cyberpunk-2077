@@ -21,8 +21,8 @@ let random = Math.floor(Math.random() * 5 + 1);
 			<div class="header">
 				<div>
 					<p>
-						<span class="handle-text-normal">V</span>
-						<span class="handle-text-dark">@v</span>
+						<span class="handle-text-normal">Johnny Silverhand</span>
+						<span class="handle-text-dark">@jsh</span>
 						<span class="handle-text-dark">&dotsquare;</span>
 						<span class="handle-text-dark">66s</span>
 					</p>
@@ -37,9 +37,9 @@ let random = Math.floor(Math.random() * 5 + 1);
 		<div class="body-wrapper">
 			<div class="body-text">
 				<p>
-					It wasn't until after college, when I went to Chicago to
-					work as a community organizer for a group of Christian
-					churches, that I confronted my own spiritual dilemma.
+					"Give yourself time. Ideas'll come. Life'll shake you, roll
+					you, maybe embrace you. The music'll find you." - Johnny and
+					V, in unison.
 				</p>
 				<Spacer size="{8}" />
 				<div class="image-wrapper">
