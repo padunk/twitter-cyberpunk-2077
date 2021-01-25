@@ -6,6 +6,7 @@ import GiTechnoHeart from "svelte-icons/gi/GiTechnoHeart.svelte";
 import MdRepeat from "svelte-icons/md/MdRepeat.svelte";
 import Avatar from "./Avatar.svelte";
 import Icon from "./Icons/Icon.svelte";
+import Spacer from "./Spacer.svelte";
 let random = Math.floor(Math.random() * 5 + 1);
 </script>
 
@@ -40,16 +41,16 @@ let random = Math.floor(Math.random() * 5 + 1);
 					work as a community organizer for a group of Christian
 					churches, that I confronted my own spiritual dilemma.
 				</p>
-				<div>images</div>
-			</div>
-		</div>
-		<div class="image-wrapper">
-			<div class="image-wrapper-inside">
-				<img
-					src="/images/cb_2077.jpg"
-					alt="cyberpunk 2077"
-					class="image-link"
-				/>
+				<Spacer size="{8}" />
+				<div class="image-wrapper">
+					<div class="image-wrapper-inside">
+						<img
+							src="/images/cb_2077.jpg"
+							alt="cyberpunk 2077"
+							class="image-link"
+						/>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="footer-wrapper">
